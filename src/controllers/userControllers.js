@@ -33,10 +33,10 @@ export const update = async function (req, res) {
 
 	[err, user] = await tojs(user.save());
 	if (err) {
-		if (err.message == 'Validation error') err = 'The email address or phone number is already in use';
+		if (err.message == 'Validation error') err = 'The email address or user name is already in use';
 		return ReE(res, err);
 	}
-	return ReS(res, { message: 'Updated User: ' + user.email });
+	return ReS(res, { message: 'Updated User: ' });
 };
 
 export const remove = async function (req, res) {
